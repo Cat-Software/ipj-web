@@ -6,9 +6,15 @@ mat-sidenav-container {
   right: 0;
 }
 
+mat-tab {
+  height: 1000px;
+  background-color: red !important;
+}
+
 #left-panel {
   padding-top: 35px;
   padding-left: 40px;
+  height: 100%;
 }
 
 .left-panel-header {
@@ -64,6 +70,7 @@ mat-sidenav-container {
 .left-panel-content {
   margin-top: 46px;
   width: 60%;
+  height: 100%;
 }
 
 .lpc-mtg-content {
