@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// IPJ Components
+import { IpjSidenavComponent } from './shared/ipj-sidenav/ipj-sidenav.component';
+
 // Material
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
-import { IpjSidenavComponent } from './shared/ipj-sidenav/ipj-sidenav.component';
 
 @NgModule({
   declarations: [AppComponent, IpjSidenavComponent],
@@ -20,6 +23,7 @@ import { IpjSidenavComponent } from './shared/ipj-sidenav/ipj-sidenav.component'
     MatIconModule,
     MatDividerModule,
     MatSidenavModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

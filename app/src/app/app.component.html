@@ -1,8 +1,39 @@
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
+<mat-sidenav-container autosize>
+  <mat-sidenav mode="side" disableClose opened>
     <app-ipj-sidenav></app-ipj-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <div id="left-panel">
+      <div class="left-panel-header">
+        <h1>Pastorais referente ao mês</h1>
+        <div class="lph-dt-month">
+          <span class="lph-dt-content">04</span>
+        </div>
+        <h1>e ao ano</h1>
+        <div class="lph-dt-year">
+          <span class="lph-dt-content">2023</span>
+        </div>
+      </div>
+      <div class="left-panel-content">
+        <mat-tab-group>
+          <mat-tab label="Em Andamento"> 
+            <div class="lpc-mtg-content">
+              <ul>
+                <li>A loucura de trocar o Senhor por outros deuses</li>
+                <li>Uma vida de Santidade</li>
+                <li>O culto segundo os preceitos de Deus</li>
+                <li class="lpc-content-default">
+                  <mat-icon aria-label="Adicionar nova pastoral" fontIcon="add_circle"></mat-icon>
+                </li>
+              </ul>
+            </div>  
+          </mat-tab>
+          <mat-tab label="Publicadas"> Content 2 </mat-tab>
+          <mat-tab label="Finalizadas"> Content 3 </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+
+    <!-- <router-outlet></router-outlet> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
