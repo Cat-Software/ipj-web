@@ -1,6 +1,40 @@
 <mat-sidenav-container autosize>
-  <mat-sidenav mode="side" disableClose opened>
+  <mat-sidenav position="start" mode="side" disableClose opened>
     <app-ipj-sidenav></app-ipj-sidenav>
+  </mat-sidenav>
+  <mat-sidenav position="end" mode="side" disableClose opened>
+    <div id="pastoral-detail">
+      <div id="pastoral-detail-header">
+        <div id="pastoral-detail-h-left">
+          <div class="pdh-action">
+            <div class="pdh-action-icon">
+              <mat-icon aria-hidden="false" arial-label="publicar" fontIcon="share"></mat-icon>
+            </div>
+            <div class="pdh-action-text">Publicar</div>
+          </div>
+
+          <div class="pdh-action">
+            <div class="pdh-action-icon">
+              <mat-icon aria-hidden="false" arial-label="Ocultar" fontIcon="visibility"></mat-icon>
+            </div>
+            <div class="pdh-action-text">Ocultar</div>
+          </div>
+
+          <div class="pdh-action">
+            <div class="pdh-action-icon">
+              <mat-icon aria-hidden="false" arial-label="Deletar" fontIcon="delete"></mat-icon>
+            </div>
+            <div class="pdh-action-text">Deletar</div>
+          </div>
+        </div>
+        <div id="pastoral-detail-h-rigth">
+          <div class="pdh-close">
+            <span>Fechar</span>
+          </div>
+        </div>
+      </div>
+      <div id="pastoral-detail-content"></div>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div id="left-panel">
@@ -16,7 +50,7 @@
       </div>
       <div class="left-panel-content">
         <mat-tab-group dynamicHeight>
-          <mat-tab label="Em Andamento"> 
+          <mat-tab label="Em Andamento">
             <div class="lpc-mtg-content">
               <ul>
                 <li>A loucura de trocar o Senhor por outros deuses</li>
@@ -26,18 +60,19 @@
                   <mat-icon aria-label="Adicionar nova pastoral" fontIcon="add_circle"></mat-icon>
                 </li>
               </ul>
-            </div>  
+            </div>
           </mat-tab>
-          <mat-tab label="Publicadas"> 
+          <mat-tab label="Publicadas">
             <div class="lpc-mtg-content">
               <ul>
                 <li>A loucura de trocar o Senhor por outros deuses</li>
                 <li>Uma vida de Santidade</li>
                 <li>O culto segundo os preceitos de Deus</li>
               </ul>
-            </div>    
+            </div>
           </mat-tab>
-          <mat-tab label="Finalizadas"> 
+          <mat-tab label="Finalizadas">
+            
             <div class="lpc-mtg-content">
               <ul>
                 <li>A loucura de trocar o Senhor por outros deuses</li>
@@ -49,7 +84,6 @@
         </mat-tab-group>
       </div>
     </div>
-
     <!-- <router-outlet></router-outlet> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

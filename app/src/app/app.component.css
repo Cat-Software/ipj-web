@@ -110,3 +110,60 @@ mat-tab {
   align-items: center;
   justify-content: center;
 }
+
+/* pastoral-deital */
+#pastoral-detail {
+  min-width: 600px;
+}
+
+#pastoral-detail-header {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#pastoral-detail-h-left {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+}
+
+.pdh-action {
+  display: flex;
+  justify-content: center;
+  padding-right: 18px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.pdh-action-icon mat-icon {
+  color: #515057;
+  font-size: 17px;
+  height: 17px;
+  padding-left: 5px;
+}
+
+.pdh-action-text {
+  color: #78787B;
+  font-size: 12px;
+}
+
+.pdh-action-text:hover {
+  color: #515057;
+}
+
+.pdh-close {
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #78787B;
+  font-weight: 500;
+}
+
+.pdh-close:hover {
+  color: #515057;
+}

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class IpjSidenavComponent {
   
-  visible: boolean = true;
+  visible: boolean = false;
 
   public toggle(): void {
     this.visible = !this.visible;
