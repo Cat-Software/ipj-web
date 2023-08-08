@@ -1,169 +1,62 @@
-mat-sidenav-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-mat-tab {
-  height: 1000px;
-  background-color: red !important;
-}
-
-#left-panel {
-  padding-top: 35px;
-  padding-left: 40px;
+#content-placeholder {
+  display: flex;
+  width: 100%;
   height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.left-panel-header {
+#background {
   display: flex;
+  width: 1000px;
+  min-height: 600px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.left-panel-header h1 {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: #1e1e1e;
-}
-
-.lph-dt-month {
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  background-color: #d9d9d9;
-  margin-left: 9px;
-  margin-right: 9px;
-
+#barra-lateral-esquerda {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  background-color: #002944;
+  min-width: 430px;
 }
 
-.lph-dt-year {
-  cursor: pointer;
-  width: 48px;
-  height: 35px;
-  background-color: #d9d9d9;
-  margin-left: 9px;
-  margin-right: 9px;
+#logo-ipj img {
+  width: 352px;
+  width: 352px;
+}
 
+#conteudo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-}
-
-.lph-dt-content {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 14px;
-  /* identical to box height */
-
-  color: #78787b;
-}
-
-.left-panel-content {
-  margin-top: 46px;
-  width: 60%;
-  height: 100%;
-}
-
-.lpc-mtg-content {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.lpc-mtg-content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.lpc-mtg-content ul li {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 40px;
-  background-color: #e9e9e9;
-  margin-bottom: 11px;
-  padding-left: 10px;
-  border-radius: 5px;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 14px;
-  color: #78787b;
-}
-
-.lpc-content-default {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* pastoral-deital */
-#pastoral-detail {
-  min-width: 600px;
-}
-
-#pastoral-detail-header {
-  width: 100%;
-  height: 40px;
-  border-bottom: 1px solid black;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-}
-
-#pastoral-detail-h-left {
-  display: flex;
   align-items: center;
-  justify-self: center;
-  justify-content: center;
+  margin-left: 28px;
+  margin-right: 30px;
+  margin-top: 80px;
+  padding: 10px;
 }
 
-.pdh-action {
+#titulo h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#subtitulo h2 {
+  font-size: 12px;
+  line-height: 0.5cm;
+  color: #696969;
+}
+
+#form {
   display: flex;
-  justify-content: center;
-  padding-right: 18px;
-  padding-top: 3px;
-  cursor: pointer;
+  flex-direction: column;
 }
 
-.pdh-action-icon mat-icon {
-  color: #515057;
-  font-size: 17px;
-  height: 17px;
-  padding-left: 5px;
-}
-
-.pdh-action-text {
-  color: #78787B;
-  font-size: 12px;
-}
-
-.pdh-action-text:hover {
-  color: #515057;
-}
-
-.pdh-close {
-  margin-right: 12px;
-  cursor: pointer;
-  font-size: 12px;
-  color: #78787B;
-  font-weight: 500;
-}
-
-.pdh-close:hover {
-  color: #515057;
+#form-conteudo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
 }

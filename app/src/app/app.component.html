@@ -1,89 +1,49 @@
-<mat-sidenav-container autosize>
-  <mat-sidenav position="start" mode="side" disableClose opened>
-    <app-ipj-sidenav></app-ipj-sidenav>
-  </mat-sidenav>
-  <mat-sidenav position="end" mode="side" disableClose opened>
-    <div id="pastoral-detail">
-      <div id="pastoral-detail-header">
-        <div id="pastoral-detail-h-left">
-          <div class="pdh-action">
-            <div class="pdh-action-icon">
-              <mat-icon aria-hidden="false" arial-label="publicar" fontIcon="share"></mat-icon>
-            </div>
-            <div class="pdh-action-text">Publicar</div>
-          </div>
-
-          <div class="pdh-action">
-            <div class="pdh-action-icon">
-              <mat-icon aria-hidden="false" arial-label="Ocultar" fontIcon="visibility"></mat-icon>
-            </div>
-            <div class="pdh-action-text">Ocultar</div>
-          </div>
-
-          <div class="pdh-action">
-            <div class="pdh-action-icon">
-              <mat-icon aria-hidden="false" arial-label="Deletar" fontIcon="delete"></mat-icon>
-            </div>
-            <div class="pdh-action-text">Deletar</div>
-          </div>
-        </div>
-        <div id="pastoral-detail-h-rigth">
-          <div class="pdh-close">
-            <span>Fechar</span>
-          </div>
-        </div>
-      </div>
-      <div id="pastoral-detail-content"></div>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div id="left-panel">
-      <div class="left-panel-header">
-        <h1>Pastorais referente ao mês</h1>
-        <div class="lph-dt-month">
-          <span class="lph-dt-content">04</span>
-        </div>
-        <h1>e ao ano</h1>
-        <div class="lph-dt-year">
-          <span class="lph-dt-content">2023</span>
-        </div>
-      </div>
-      <div class="left-panel-content">
-        <mat-tab-group dynamicHeight>
-          <mat-tab label="Em Andamento">
-            <div class="lpc-mtg-content">
-              <ul>
-                <li>A loucura de trocar o Senhor por outros deuses</li>
-                <li>Uma vida de Santidade</li>
-                <li>O culto segundo os preceitos de Deus</li>
-                <li class="lpc-content-default">
-                  <mat-icon aria-label="Adicionar nova pastoral" fontIcon="add_circle"></mat-icon>
-                </li>
-              </ul>
-            </div>
-          </mat-tab>
-          <mat-tab label="Publicadas">
-            <div class="lpc-mtg-content">
-              <ul>
-                <li>A loucura de trocar o Senhor por outros deuses</li>
-                <li>Uma vida de Santidade</li>
-                <li>O culto segundo os preceitos de Deus</li>
-              </ul>
-            </div>
-          </mat-tab>
-          <mat-tab label="Finalizadas">
-            
-            <div class="lpc-mtg-content">
-              <ul>
-                <li>A loucura de trocar o Senhor por outros deuses</li>
-                <li>Uma vida de Santidade</li>
-                <li>O culto segundo os preceitos de Deus</li>
-              </ul>
-            </div>
-          </mat-tab>
-        </mat-tab-group>
+<div id="content-placeholder">
+  <div id="background">
+    <div id="barra-lateral-esquerda">
+      <div id="logo-ipj">
+        <img src="/assets/LOGO_IPJ_AZUL_ESCURO_QUADRADO.jpg" />
       </div>
     </div>
-    <!-- <router-outlet></router-outlet> -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <div id="conteudo">
+      <div id="conteudo-principal">
+        <div id="head">
+          <div id="titulo">
+            <h1>Sistema Igreja Presbiteriana do Jundiaí</h1>
+          </div>
+          <div id="subtitulo">
+            <h2>
+              Ferramenta de uso institucional, se estiver buscando pelo aplicativo
+              destinado ao publico, você pode encontra-lo na loja de aplicativos
+              como IPJ GO.
+            </h2>
+          </div>
+        </div>
+        <div id="form">
+          <div id="form-conteudo">
+            <mat-form-field appearance="outline" id="form-field-nome-usuario">
+              <mat-label>Nome de usuário</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="outline" id="form-field-senha">
+              <mat-label>Senha</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Entrar</button>
+          </div>
+          <div id="form-rodape">
+            <p>Problemas para acessar sua conta administrativa ou de membro? <a href="#" target="_blank">Clique aqui.</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="rodape">
+        <p>Acesse nossa <a href="#" target="_blank">Política do Uso dos Dados</a> e nosso <a href="#" target="_blank">Termos de Serviço</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
