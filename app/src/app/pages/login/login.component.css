@@ -1,0 +1,63 @@
+#content-placeholder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #background {
+    display: flex;
+    width: 1000px;
+    min-height: 600px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  #barra-lateral-esquerda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #002944;
+    min-width: 430px;
+  }
+  
+  #logo-ipj img {
+    width: 352px;
+    width: 352px;
+  }
+  
+  #conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 28px;
+    margin-right: 30px;
+    margin-top: 80px;
+    padding: 10px;
+  }
+  
+  #titulo h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  #subtitulo h2 {
+    font-size: 12px;
+    line-height: 0.5cm;
+    color: #696969;
+  }
+  
+  #form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #form-conteudo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  
