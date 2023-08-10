@@ -19,6 +19,6 @@ export class AuthService {
    * @returns Observable<any>
    */
   public autenticar(userRequest: UserRequest): Observable<any> {
-    return this.http.post('https://ipj-service.onrender.com/auth', userRequest, { responseType: 'text' });
+    return this.http.post('http://localhost:8080/auth', userRequest, { responseType: 'text' });
   }
 }

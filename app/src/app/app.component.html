@@ -1,1 +1,43 @@
+<div id="toolbar" *ngIf="logado()">
+    <div id="toolbar-left">
+        <div id="toolbar-logo">
+            <img src="/assets/LOGO_IPJ_AZUL_ESCURO_HORIZONTAL.jpg">
+        </div>
+        <div id="toolbar-menu">
+            <ul class="menu">
+                <li class="menu-item">Inicio</li>
+                <li class="menu-item">Controle de membros</li>
+                <li class="menu-item">Avisos</li>
+            </ul>
+        </div>
+    </div>
+    <div id="toolbar-perfil">
+        <div id="foto-perfil">
+            <img src="/assets/RODRIGO_PERFIL.jpg">
+        </div>
+        <div id="info-perfil">
+            <div id="titulo-perfil">Secretário</div>
+            <div id="nome-completo-perfil">Rodrigo M.P Andrade</div>
+        </div>
+        <div id="action-perfil">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>expand_more</mat-icon>
+              </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item disabled="">
+                  <mat-icon>manage_accounts</mat-icon>
+                  <span>Perfil</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>settings</mat-icon>
+                  <span>Configurações</span>
+                </button>
+                <button mat-menu-item (click)="desconectar()">
+                  <mat-icon>logout</mat-icon>
+                  <span>Desconectar</span>
+                </button>
+              </mat-menu>
+        </div>
+    </div>
+</div>
 <router-outlet></router-outlet>

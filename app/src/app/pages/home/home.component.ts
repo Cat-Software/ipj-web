@@ -8,9 +8,4 @@ import { UsuarioService } from 'src/app/services/usuario-service/usuario.service
 })
 export class HomeComponent {
 
-  constructor(private usuarioService: UsuarioService) {}
-
-  public desconectar(): void {
-    this.usuarioService.deslogar();
-  }
 }

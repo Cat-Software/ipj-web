@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autenticado.guard';
 import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
+import { NovoMembroComponent } from './pages/controle-usuario/novo-membro/novo-membro.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [UsuarioNaoAutenticadoGuard],
+  },
+  {
+    path: 'controle-usuario/novo-membro',
+    component: NovoMembroComponent,
+    canActivate: [UsuarioAutenticadoGuard],
   },
 ];
 

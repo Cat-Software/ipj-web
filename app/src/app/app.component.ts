@@ -1,9 +1,19 @@
 import { Component } from '@angular/core';
-import { AuthService } from './services/auth-service/auth.service';
+import { UsuarioService } from './services/usuario-service/usuario.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private usuarioService: UsuarioService) {}
+
+  public logado(): boolean {
+    return this.usuarioService.logado;
+  }
+
+  public desconectar(): void {
+    this.usuarioService.deslogar();
+  }
+}

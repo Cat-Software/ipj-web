@@ -1,0 +1,82 @@
+#toolbar {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #002944;
+}
+
+#toolbar-left {
+    display: flex;
+    align-items: center;
+}
+
+#toolbar-logo img {
+    margin-left: 25px;
+    width: 200px;
+    image-rendering: optimizeQuality;
+}
+
+#toolbar-perfil {
+    width: 250px;
+    height: 42px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
+#action-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#action-perfil mat-icon {
+    color: #D9D9D9;
+    cursor: pointer;
+}
+
+#action-perfil mat-icon:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#info-perfil {
+    margin-left: 8px;
+}
+
+#foto-perfil img {
+    border-radius: 50%;
+    width: 45px;
+}
+
+#titulo-perfil {
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#nome-completo-perfil {
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu-item {
+    list-style: none;
+    color: #D9D9D9;
+    font-weight: lighter;
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.menu-item:hover {
+    color: #c0bfbf;
+}
