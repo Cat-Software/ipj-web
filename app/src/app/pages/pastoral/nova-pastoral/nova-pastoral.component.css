@@ -1,0 +1,28 @@
+#pastoral {
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+#actions {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+#actions button {
+    margin-left: 5px;
+    margin-right: 5px;
+}

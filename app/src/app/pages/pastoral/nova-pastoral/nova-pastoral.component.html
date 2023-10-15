@@ -1,0 +1,18 @@
+<div id="pastoral">
+    <header>
+        <h1>Pastoral</h1>
+    </header>
+    <section>
+        <p>
+            Toda pastoral publicada substituira a pastoral vigente, mas ainda podera ser
+            consultada pelo membro na aba de pesquisa do aplicativo.
+        </p>
+    </section>
+    <main>
+        <angular-editor id="pastoral-editor" [(ngModel)]="novaPastoral" [config]="editorConfig"></angular-editor>
+        <div id="actions">
+            <button mat-raised-button color="secondary">Salvar</button>
+            <button mat-raised-button color="primary" (click)="publicar()">Publicar</button>
+        </div>
+    </main>
+</div>

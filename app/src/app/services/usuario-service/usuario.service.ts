@@ -14,7 +14,7 @@ export class UsuarioService {
   constructor(private authService: AuthService, private router: Router) {}
 
   public get logado(): boolean {
-    return this._logado || localStorage.getItem('token') != null;
+    return this._logado || localStorage.getItem('credenciais') != null;
   }
 
   public logar(userRequest: UserRequest) {
@@ -24,8 +24,8 @@ export class UsuarioService {
         tap({
           next: (value) => {
             console.log('NEXT:', value);
-            localStorage.setItem('token', value);
-            localStorage.setItem('usuario', 'rodrigo.andrade');
+            localStorage.setItem('credenciais', value);
+            localStorage.setItem('usuario', userRequest.nomeUsuario.toString());
             this._logado = true;
             this.router.navigate(['']);
           },

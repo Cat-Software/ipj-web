@@ -80,3 +80,12 @@
 .menu-item:hover {
     color: #c0bfbf;
 }
+
+.menu-item a {
+    color: #D9D9D9;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    color: #c0bfbf;
+}

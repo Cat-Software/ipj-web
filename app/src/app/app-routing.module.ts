@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autenticado.guard';
 import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
 import { NovoMembroComponent } from './pages/controle-usuario/novo-membro/novo-membro.component';
+import { NovaPastoral } from './pages/pastoral/nova-pastoral/nova-pastoral.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
     component: NovoMembroComponent,
     canActivate: [UsuarioAutenticadoGuard],
   },
+  {
+    path: 'pastoral/nova-pastoral',
+    component: NovaPastoral,
+    canActivate: [UsuarioAutenticadoGuard],
+  }
 ];
 
 @NgModule({

@@ -6,11 +6,13 @@
 
 #novo-membro {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #novo-membro-stepper {
+  max-width: 600px;
   min-width: 600px;
+  padding: 20px;
 }
 
 #novo-membro-foto-perfil {
@@ -54,4 +56,46 @@
 
 .nome {
   font-weight: lighter;
+}
+
+#cargos-escolhidos {
+  display: flex;
+  flex-direction: column;
+}
+
+#cargo-label h1{
+  font-size: medium;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+#cargo-label h2{
+  font-size: small;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0;
+}
+
+#finalizar-resumo {
+  padding: 35px;
+  text-align: justify;
+}
+
+#stepper-finalizar { 
+  display: flex;
+  flex-direction: column;
+}
+
+#stepper-action {
+  display: flex;
+  flex-direction: column;
+}
+
+#stepper-action button {
+  margin-top: 10px;
+}
+
+.dado-em-destaque {
+  font-weight: bold;
 }

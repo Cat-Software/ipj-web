@@ -7,14 +7,14 @@
                 <div class="stepper-inputs">
                   <mat-form-field appearance="outline" [hideRequiredMarker]="true">
                     <mat-label>Nome Completo</mat-label>
-                    <input matInput formControlName="nomeCompleto" required>
+                    <input matInput formControlName="nomeCompleto" required (blur)="criarNomeUsuario()">
                   </mat-form-field>
                   <mat-form-field  appearance="outline" [hideRequiredMarker]="true">
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email" required>
                   </mat-form-field>
-                  <mat-form-field  appearance="outline">
-                    <mat-label>Nome usuário</mat-label>
+                  <mat-form-field  appearance="outline" [hideRequiredMarker]="true" >
+                    <mat-label>Nome de usuário</mat-label>
                     <input matInput formControlName="nomeUsuario">
                   </mat-form-field>
                   <mat-form-field appearance="outline">
@@ -26,39 +26,88 @@
                       formControlName="cargo"
                       [matAutocomplete]="auto"
                       (input)="filtrarCargo()"
-                      (focus)="filtrarCargo()">
-                    <mat-autocomplete requireSelecton #auto="matAutocomplete">
+                      (focus)="filtrarCargo()"
+                     >
+                    <mat-autocomplete requireSelecton #auto="matAutocomplete" (optionSelected)="adicionarCargo()">
                       <mat-option *ngFor="let cargo of papeisFiltrados " [value]="cargo.value">
                         {{ cargo.value }}
                       </mat-option>
                     </mat-autocomplete>
                   </mat-form-field>
-                </div>
-                <div>
-                  <button mat-button matStepperNext>Avançar</button>
+                  <div id="cargos-escolhidos">
+                    <div id="cargo-label">
+                      <h1>Cargo Principal</h1>
+                      <h2>Dentre os cargos escolhidos selecione o principal*</h2>
+                    </div>
+                    <div id="cargos-escolhidos-content">
+                      <mat-chip-listbox aria-label="Fish selection" formControlName="cargoPrincipal">
+                        <mat-chip-option disabled="true">Membro</mat-chip-option>
+                        <mat-chip-option 
+                          *ngFor="let cargoEscolhido of cargosEscolhidos" 
+                          [value]="cargoEscolhido"
+                          >{{cargoEscolhido}}
+                          <button matChipRemove aria-label="Remove orange" (click)="removerCargo(cargoEscolhido)">
+                            <mat-icon>cancel</mat-icon>
+                          </button></mat-chip-option>
+                      </mat-chip-listbox>
+                    </div>
+                  </div>
                 </div>
               </form>
             </mat-step>
-            <mat-step [stepControl]="secondFormGroup">
-              <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>Fill out your address</ng-template>
-                <mat-form-field>
-                  <mat-label>Address</mat-label>
-                  <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                         required>
-                </mat-form-field>
-                <div>
-                  <button mat-button matStepperPrevious>Back</button>
-                  <button mat-button matStepperNext>Next</button>
+            <mat-step [stepControl]="detalhes">
+              <form [formGroup]="detalhes">
+                <ng-template matStepLabel>Detalhes</ng-template>
+                <div class="stepper-inputs">
+                  <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+                    <mat-label>Endereço</mat-label>
+                    <input matInput formControlName="endereco" required>
+                  </mat-form-field>
+                  <mat-form-field  appearance="outline" [hideRequiredMarker]="true">
+                    <mat-label>Data nascimento</mat-label>
+                    <input matInput [matDatepicker]="dataNascimento" formControlName="dataNascimento" required>
+                    <mat-datepicker-toggle matIconSuffix [for]="dataNascimento"></mat-datepicker-toggle>
+                    <mat-datepicker #dataNascimento></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field  appearance="outline" [hideRequiredMarker]="true" >
+                    <mat-label>Membro desde</mat-label>
+                    <input matInput [matDatepicker]="membroDesde" formControlName="membroDesde" required>
+                    <mat-datepicker-toggle matIconSuffix [for]="membroDesde"></mat-datepicker-toggle>
+                    <mat-datepicker #membroDesde></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field  appearance="outline" [hideRequiredMarker]="true" >
+                    <mat-label>Estado Cívil</mat-label>
+                    <mat-select matNativeControl formControlName="estadoCivil">
+                      <mat-option value="Solteiro">Solteiro</mat-option>
+                      <mat-option value="Casado">Casado</mat-option>
+                      <mat-option value="Divorciado">Divorciado</mat-option>
+                      <mat-option value="Viuvo">Viuvo</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field  appearance="outline" [hideRequiredMarker]="true" >
+                    <mat-label>Sexo</mat-label>
+                    <mat-select matNativeControl formControlName="estadoCivil">
+                      <mat-option value="Solteiro">Masculino</mat-option>
+                      <mat-option value="Viuvo">Feminino</mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
               </form>
             </mat-step>
             <mat-step>
-              <ng-template matStepLabel>Done</ng-template>
-              <p>You are now done.</p>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="stepper.reset()">Reset</button>
+              <ng-template matStepLabel>Finalizar</ng-template>
+              <div id="stepper-finalizar">
+                <p id="finalizar-resumo">
+                  Você está cadastrando o usuário 
+                  <span class="dado-em-destaque">{{informacoesBasicas.get('nomeCompleto')?.value}}</span>,
+                  <span  class="dado-em-destaque">{{detalhes.get('estadoCivil')?.value}}</span>, nascido no <span class="dado-em-destaque">{{ detalhes.get('dataNascimento')?.value | date: 'dd/MM/yyyy' }}</span>,
+                  que veio a se tornar membro da Igreja Presbiteriana do Jundiai na data de <span class="dado-em-destaque">{{ detalhes.get('membroDesde')?.value | date: 'dd/MM/yyyy' }}</span>, 
+                  ocupante do cargo principal de <span class="dado-em-destaque">{{ informacoesBasicas.get('cargoPrincipal')?.value }}</span> e residente no Endereço <span class="dado-em-destaque">{{ detalhes.get('endereco')?.value }}</span>.
+                </p>
+                <div id="stepper-action">
+                  <mat-checkbox>Confirmo a veracidade dos dados.</mat-checkbox>
+                  <button mat-button mat-raised-button color="primary" (click)="stepper.reset()">Salvar</button>
+                </div>
               </div>
             </mat-step>
           </mat-stepper>
@@ -66,8 +115,8 @@
     <div id="novo-membro-foto-perfil">
       <img src="assets/RODRIGO_PERFIL.jpg">
       <div id="foto-perfil-placeholder">
-        <p class="papel">Secretário</p>
-        <p class="nome">Rodrigo M.P Andrade</p>
+        <p class="papel">{{informacoesBasicas.get('cargoPrincipal')?.value || 'Membro'}}</p>
+        <p class="nome">{{informacoesBasicas.get('nomeCompleto')?.value || 'Nome Completo'}}</p>
       </div>
     </div>
 </div>
