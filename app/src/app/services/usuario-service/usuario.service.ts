@@ -24,7 +24,7 @@ export class UsuarioService {
         tap({
           next: (value) => {
             console.log('NEXT:', value);
-            localStorage.setItem('credenciais', value);
+            localStorage.setItem('credenciais', JSON.stringify(value));
             localStorage.setItem('usuario', userRequest.nomeUsuario.toString());
             this._logado = true;
             this.router.navigate(['']);

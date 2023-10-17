@@ -6,6 +6,15 @@
     flex-direction: column;
 }
 
+#informacoes-pastoral {
+    display: flex;
+    flex-direction: column;
+} 
+
+#informacoes-pastoral textarea {
+    resize: none;
+}
+
 main {
     display: flex;
     height: 100%;

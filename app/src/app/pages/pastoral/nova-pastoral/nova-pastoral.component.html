@@ -9,10 +9,30 @@
         </p>
     </section>
     <main>
-        <angular-editor id="pastoral-editor" [(ngModel)]="novaPastoral" [config]="editorConfig"></angular-editor>
-        <div id="actions">
-            <button mat-raised-button color="secondary">Salvar</button>
-            <button mat-raised-button color="primary" (click)="publicar()">Publicar</button>
+        <div id="informacoes-pastoral">
+            <mat-form-field>
+                <mat-label>Título:</mat-label>
+                <input matInput type="text" [(ngModel)]="pastoral.titulo">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Subtítulo:</mat-label>
+                <input matInput type="text"  [(ngModel)]="pastoral.subtitulo">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Autor:</mat-label>
+                <input matInput type="text" [(ngModel)]="pastoral.autor">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Descrição:</mat-label>
+                <textarea matInput [(ngModel)]="pastoral.descricao" rows="3" ></textarea>
+            </mat-form-field>
+        </div>
+        <div id="editor">
+            <angular-editor id="pastoral-editor" [(ngModel)]="pastoral.conteudo" [config]="editorConfig"></angular-editor>
+            <div id="actions">
+                <button mat-raised-button color="secondary" (click)="salvar()">Salvar</button>
+                <button mat-raised-button color="primary" [disabled]="!salvo">Publicar</button>
+            </div>
         </div>
     </main>
 </div>

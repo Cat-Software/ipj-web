@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { PastoralRequest } from 'src/app/models/requests/pastoral.request.model';
+import { PastoralService } from 'src/app/services/pastoral-service/pastoral.service';
 
 @Component({
   templateUrl: './nova-pastoral.component.html',
   styleUrls: ['./nova-pastoral.component.css'],
 })
 export class NovaPastoral {
-  novaPastoral: any;
+  salvo: boolean = false;
+  pastoral: PastoralRequest = {
+    titulo: '',
+    subtitulo: '',
+    descricao: '',
+    autor: '',
+    conteudo: '',
+    usuario: ''
+  };
+
   public editorConfig: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
@@ -49,7 +60,12 @@ export class NovaPastoral {
     toolbarHiddenButtons: [['bold', 'italic'], ['fontSize']],
   };
 
-  publicar() {
-    console.log(this.novaPastoral);
+  constructor(private pastoralService: PastoralService) {}
+
+  salvar() {
+    this.pastoralService.salvar(this.pastoral).subscribe((value) => {
+      console.log(value);
+      this.salvo = true;
+    });
   }
 }
