@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { PastoralRequest } from 'src/app/models/requests/pastoral.request.model';
 import { PastoralService } from 'src/app/services/pastoral-service/pastoral.service';
 
 @Component({
-  templateUrl: './nova-pastoral.component.html',
-  styleUrls: ['./nova-pastoral.component.css'],
+  templateUrl: './editar-pastoral.component.html',
+  styleUrls: ['./editar-pastoral.component.css'],
 })
-export class NovaPastoral {
+export class EditarPastoral implements OnInit {
   salvo: boolean = false;
   pastoral: PastoralRequest = {
     uuid: '',
@@ -62,7 +63,14 @@ export class NovaPastoral {
     toolbarHiddenButtons: [['bold', 'italic'], ['fontSize']],
   };
 
-  constructor(private pastoralService: PastoralService, private _snackBar: MatSnackBar) {}
+  constructor(private pastoralService: PastoralService, private _snackBar: MatSnackBar, private route: ActivatedRoute) {}
+  
+  ngOnInit(): void {
+    const uuid = this.route.snapshot.paramMap.get('uuid');
+    this.pastoralService.buscarPorUuid(uuid!).subscribe((value) => {
+      this.pastoral = value;
+    });
+  }
 
   salvar() {
     this.pastoralService.salvar(this.pastoral).subscribe((value) => {

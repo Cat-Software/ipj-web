@@ -1,0 +1,68 @@
+header {
+  width: 90%;
+}
+
+#filtro-pesquisa-pastoral {
+  display: none;
+}
+
+#actions-pastoral {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.action-bnts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-bnts a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action-bnts mat-icon {
+  cursor: pointer;
+}
+
+.danger {
+  color: rgb(198, 6, 6);
+}
+
+.danger:hover {
+  color: red;
+}
+
+.safe-action-icon {
+  color: rgb(6, 6, 187);
+}
+
+.safe-action-icon:hover {
+  color: blue;
+}
+
+#pastoral-main {
+  width: 90%;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  margin-bottom: 3px;
+}
+
+mat-paginator {
+  background-color: rgba(128, 128, 128, 0.042);
+  padding-bottom: 10px;
+}

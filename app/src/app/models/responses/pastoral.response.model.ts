@@ -1,9 +1,10 @@
-export interface PastoralRequest {
+export interface PastoralResponse {
     uuid: string,
     titulo: string,
     subtitulo: string,
     descricao: string,
-    conteudo: string,
     autor: string,
-    usuario: string,
+    criadoEm: any,
+    publicadoEm:any,
+    ativo: boolean,
 }

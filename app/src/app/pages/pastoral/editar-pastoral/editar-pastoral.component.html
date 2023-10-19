@@ -1,5 +1,7 @@
 <div id="pastoral">
     <header>
+        <a [routerLink]="['/pastoral']"><mat-icon fontIcon="arrow_back"></mat-icon></a>
+        <mat-divider></mat-divider>
         <h1>Pastoral</h1>
     </header>
     <section>
@@ -9,7 +11,7 @@
         </p>
     </section>
     <main>
-        <div id="informacoes-pastoral" >
+        <div id="informacoes-pastoral">
             <mat-form-field>
                 <mat-label>Título:</mat-label>
                 <input matInput type="text" [(ngModel)]="pastoral.titulo">
@@ -30,11 +32,8 @@
         <div id="editor">
             <angular-editor id="pastoral-editor" [(ngModel)]="pastoral.conteudo" [config]="editorConfig"></angular-editor>
             <div id="actions">
-                <button mat-raised-button color="{{salvo ? 'accent' : 'warn'}}" [routerLink]="['/pastoral']">
-                    {{!salvo ? 'Cancelar' : 'Voltar'}}
-                </button>
                 <button mat-raised-button color="secondary" (click)="salvar()">Salvar</button>
-                <button mat-raised-button color="primary" [disabled]="!salvo">Publicar</button>
+                <button mat-raised-button color="primary">Publicar</button>
             </div>
         </div>
     </main>

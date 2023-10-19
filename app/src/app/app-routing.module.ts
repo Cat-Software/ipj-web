@@ -6,28 +6,41 @@ import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autent
 import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
 import { NovoMembroComponent } from './pages/controle-usuario/novo-membro/novo-membro.component';
 import { NovaPastoral } from './pages/pastoral/nova-pastoral/nova-pastoral.component';
+import { ListarPastoral } from './pages/pastoral/listar-pastoral/listar-pastoral.component';
+import { EditarPastoral } from './pages/pastoral/editar-pastoral/editar-pastoral.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
     canActivate: [UsuarioAutenticadoGuard],
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'controle-usuario/novo-membro',
+        component: NovoMembroComponent,
+      },
+      {
+        path: 'pastoral',
+        component: ListarPastoral,
+      },
+      {
+        path: 'pastoral/nova-pastoral',
+        component: NovaPastoral,
+      },
+      {
+        path: 'pastoral/:uuid',
+        component: EditarPastoral,
+      }
+    ]
   },
   {
     path: 'login',
     component: LoginComponent,
     canActivate: [UsuarioNaoAutenticadoGuard],
   },
-  {
-    path: 'controle-usuario/novo-membro',
-    component: NovoMembroComponent,
-    canActivate: [UsuarioAutenticadoGuard],
-  },
-  {
-    path: 'pastoral/nova-pastoral',
-    component: NovaPastoral,
-    canActivate: [UsuarioAutenticadoGuard],
-  }
 ];
 
 @NgModule({
